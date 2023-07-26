@@ -34,7 +34,7 @@ jobs:
   
         - name: lstn scan
           run: |
-            lstn scan --endpoint https://npm-staging.listen.dev -r gh-pull-comment --gh-owner jadoonf --gh-token ${{ secrets.PERSONAL_ACCESS_TOKEN }} --gh-repo ${{ github.repository }} --gh-pull-id ${{ github.event.number }}  lstn:
+            lstn scan --endpoint https://npm-staging.listen.dev -r gh-pull-comment --gh-owner jadoonf --gh-token ${{ secrets.PERSONAL_ACCESS_TOKEN }} --gh-repo ${{ github.repository }} --gh-pull-id ${{ github.event.number }} 
 
     # name: Clone repo
     # uses: actions/checkout@v3
