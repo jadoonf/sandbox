@@ -1,6 +1,6 @@
 {
   "name": "test-project",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +16,6 @@
     "ink": "^3.2.0",
     "isexe": "^2.0.0",
     "istanbul-lib-processinfo": "^2.0.3",
-    "jackspeak": "^1.4.2",
     "libtap": "^1.4.0",
     "minipass": "^3.3.4",
     "mkdirp": "^1.0.4",
