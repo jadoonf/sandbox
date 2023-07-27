@@ -33,4 +33,4 @@ jobs:
   
         - name: lstn scan
           run: |
-            GITHUB_ACTION=true lstn scan --endpoint https://npm-staging.listen.dev -r gh-pull-comment --gh-owner jadoonf --gh-token ${{ secrets.PERSONAL_ACCESS_TOKEN }} --gh-repo ${{ github.repository }} --gh-pull-id ${{ github.event.number }}
+            GITHUB_ACTION=true lstn scan --endpoint https://npm-staging.listen.dev -r gh-pull-comment --gh-token ${{ secrets.PERSONAL_ACCESS_TOKEN }} --gh-repo ${{ github.repository }} --gh-pull-id ${{ github.event.number }}
