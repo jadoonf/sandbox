@@ -4,9 +4,10 @@ on:
     pull_request:
       branches: ["*"]
   
-  permissions:
+permissions:
     contents: read
     pull-requests: write
+
 
 jobs:
   pkg-size-report:
@@ -24,3 +25,5 @@ jobs:
 
       - name: Package size report
         uses: pkg-size/action@v1
+        env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

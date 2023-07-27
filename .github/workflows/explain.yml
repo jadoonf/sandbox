@@ -1,20 +1,28 @@
 name: Explain PR
 
-on:
+on: 
   pull_request:
-    types: [opened, synchronize]
+    branches: ["*"]
 
-env:
-  DIFF: ${{ compare(github.base_ref, github.head_ref) }}
+permissions:
+  contents: read
+  pull-requests: write
+  
 
 jobs:
   explain-diff:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Explain Diff
-      id: explain
-      uses: actions/lstn-ai-action
-      with:
-        diff: ${{ env.DIFF }}
-        apikey: ${{ secrets.OPENAI_SECRET_KEY }}
+      - name: Explain Diff
+        id: explain
+        if: github.event_name == 'pull_request'
+        uses: garnet-labs/lstn-ai-action@main
+        env:
+          DIFF: ${{ github.event.pull_request.diff_url }}
+          OPENAI_SECRET_KEY: ${{ secrets.OPENAI_SECRET_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          diff: ${{ github.event.pull_request.diff_url }}
+          openai_secret_key: ${{ secrets.OPENAI_SECRET_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
