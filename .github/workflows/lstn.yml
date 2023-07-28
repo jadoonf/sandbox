@@ -14,23 +14,7 @@ jobs:
       steps:
         - name: Clone repo
           uses: actions/checkout@v3
-          with:
-            repository: listendev/lstn
-            ref: gh-comment-improve
-  
-        - name: Build lstn CLI from source
-          uses: actions/setup-go@v3
-          with:
-            go-version: '1.19.4'
-            cache: true
-        - run: |
-            go run make/main.go lstn
-            mv ./lstn /usr/local/bin/lstn
-            lstn version 
-  
-        - name: Checkout the test repo
-          uses: actions/checkout@v3
   
         - name: lstn scan
-          run: |
-            GITHUB_ACTION=true lstn scan --endpoint https://npm-staging.listen.dev -r gh-pull-comment --gh-token ${{ secrets.PERSONAL_ACCESS_TOKEN }} --gh-repo ${{ github.repository }} --gh-pull-id ${{ github.event.number }}
+          uses: listendev/action@v0.2.1
+      
