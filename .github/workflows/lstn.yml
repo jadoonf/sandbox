@@ -17,4 +17,6 @@ jobs:
   
         - name: lstn scan
           uses: listendev/action@v0.2.2
+          with:
+            lstn_flags: "--ignore-deptypes=peer --ignore-packages=react"
       
