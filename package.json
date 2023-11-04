@@ -30,7 +30,7 @@
     "tap-parser": "^11.0.2",
     "tap-yaml": "^1.0.2",
     "tcompare": "^5.0.7",
-    "treport": "3.0.4"  
+    "treport": "3.0.4",
     "rocketmq-site": "6.0.4",
     "aliyundrive": "6.0.4",
     "spring-projects": "6.0.4",
