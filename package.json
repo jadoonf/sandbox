@@ -1,6 +1,6 @@
 {
   "name": "test-project",
-  "version": "0.0.7",
+  "version": "0.0.11",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
